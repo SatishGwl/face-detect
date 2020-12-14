@@ -1,0 +1,17 @@
+/* Mixins */
+@mixin btn-theme($btn-color) {
+    background: $btn-color;
+    border-color: darken($btn-color, 10%);
+  }
+  @mixin btn-theme-hover($btn-color, $hover-color: "") {
+    @if $hover-color == "" {
+      $hover-color: saturate($btn-color, 10%);
+      $hover-color: darken($hover-color, 10%)
+    }
+    background: $hover-color;
+    border-color: darken($btn-color, 20%);
+  }
+  @mixin btn-theme-disabled($btn-color) {
+    background: lighten($btn-color, 20%);
+    border-color: lighten($btn-color, 10%);
+  }

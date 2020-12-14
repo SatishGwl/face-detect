@@ -1,0 +1,69 @@
+/* Colors */
+$btn-danger: #DA4F49;
+$btn-default: #f96b2d;
+$btn-primary: #3196cb;
+$btn-grey: #999;
+$btn-grey-hover: #777;
+$btn-color: white;
+
+
+
+/* Primary button class with default color (orange) */
+.my-btn {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid;
+  color: $btn-color;
+  @include btn-theme($btn-default);
+}
+.my-btn:hover {
+  color: $btn-color;
+  text-decoration: none;
+  @include btn-theme-hover($btn-default);
+}
+.my-btn.disabled, .my-btn.disabled:hover {
+  -webkit-user-select: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .65;
+  @include btn-theme-disabled($btn-default);
+}
+
+/* Different versions of the button (extending) */
+.my-btn.my-btn-primary {
+  @include btn-theme($btn-primary);
+}
+.my-btn.my-btn-primary:hover {
+  @include btn-theme-hover($btn-primary);
+}
+.my-btn.my-btn-primary.disabled, .my-btn.my-btn-primary.disabled:hover {
+  @include btn-theme-disabled($btn-primary);
+}
+
+.my-btn.my-btn-grey {
+  @include btn-theme($btn-grey);
+}
+.my-btn.my-btn-grey:hover {
+  @include btn-theme-hover($btn-grey, $btn-grey-hover);
+}
+.my-btn.my-btn-grey.disabled, .my-btn.my-btn-grey.disabled:hover {
+  @include btn-theme-disabled($btn-grey);
+}
+
+.my-btn.my-btn-danger {
+  @include btn-theme($btn-danger)
+}
+.my-btn.my-btn-danger:hover {
+  @include btn-theme-hover($btn-danger);
+}
+.my-btn.my-btn-danger.disabled, .my-btn.my-btn-danger.disabled:hover {
+  @include btn-theme-disabled($btn-danger);
+}
